@@ -1,12 +1,12 @@
 import React from 'react'
-import { DATA_URL } from '../../utils/UrlData';
+import { ASSET_URL } from '../../utils/UrlData';
 
 function Restaurant(props) {
-    const {restarent} = props;
-    const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } = restarent?.info
+    const {restaurant} = props;
+    const { cloudinaryImageId, name, cuisines, avgRating, costForTwo, sla } = restaurant?.info
     return (
         <div className="res-card">
-    <img className="res-logo" src={DATA_URL+cloudinaryImageId} alt="Restaurant Logo" />
+    <img className="res-logo" src={ASSET_URL+cloudinaryImageId} alt="Restaurant Logo" />
     <h3>{name}</h3>
     <h4>{cuisines.join(", ")}</h4>
     <h4>{avgRating}</h4>

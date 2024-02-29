@@ -1,7 +1,15 @@
 import React from 'react'
 import { ASSET_URL } from '../../utils/UrlData'
+import { useDispatch } from 'react-redux'
+import { addItem } from '../../utils/cartSlice'
 
 const ItemList = ({ items }) => {
+
+    const dispatch = useDispatch()
+
+    const handleAddItem = (item) =>{
+       dispatch(addItem(item))
+    }
     return (
         <div>
             {items.map((item) => (
@@ -14,9 +22,9 @@ const ItemList = ({ items }) => {
                     <p className='text-xs'>{item.card.info.description}</p>
                     </div>
                     <div className='w-3/12'>
-                        {/* <div className='absolute'>
-                     <button className='bg-white shadow-lg m-20 rounded p-2'>Add +</button>
-                     </div> */}
+                        <div className='absolute'>
+                     <button className='bg-green-300 shadow-lg mx-12 my-[100px] rounded p-2' onClick={() => handleAddItem(item)}>Add +</button>
+                     </div>
                      <img src={ASSET_URL+item.card.info.imageId} className='w-[150px] h-50 py-2'></img>
                      </div>
                 </div>

@@ -2,13 +2,14 @@ import React, { useState, useContext } from 'react'
 import { LOGO_URL } from '../../utils/UrlData'
 import { Link } from 'react-router-dom';
 import UsersContext from '../../utils/UsersContext';
+import { useSelector } from 'react-redux';
 
 function Header() {
  
     let [btnState, useBtnState] = useState("Login");
 
     const data= useContext(UsersContext)
-    console.log(data.user, data.login)
+ const cartItems = useSelector((store) => store.cart.items)
     
     return (
         <div className="flex max-h-[100px] drop-shadow-sm shadow-sm justify-between bg-green-300">
@@ -20,7 +21,7 @@ function Header() {
                     <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'><Link to="/" relative="path">Home</Link></li>
                     <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'><Link to="/about" relative="path">About</Link></li>
                     <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'><Link to="/contact-us" relative="path">Contact Us</Link></li>
-                    <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'>Cart</li>
+                    <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'><Link to="/cart">Cart ({cartItems.length} items)</Link></li>
                     <li className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-0"><button className='login-btn' onClick={() =>
                         {btnState === "Login"? useBtnState("Logout") : useBtnState("Login")}}>{btnState}</button></li>
                           <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'>{data.user}</li>

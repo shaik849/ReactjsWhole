@@ -15,9 +15,9 @@ const RestaurantMenu =  () => {
     const handleShowIndex = (index) => {
       setShowIndex((prevIndex) => (prevIndex === null ? index : null));
     };
-    const  {name, cuisines, costForTwoMessage, }  = menuData?.data?.cards[2]?.card?.card?.info || {};
+    const  {name, cuisines, costForTwoMessage, }  = menuData?.data?.cards[0]?.card?.card?.info || {};
     // const { itemCards, title } = menuData?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card || {};
-    const categories = menuData?.data?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
+    const categories = menuData?.data?.cards[2].groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c) => c?.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
   return  menuData === null ? <Shimmer /> :(
     <div className='text-center'>
         <h1 className='font-bold my-6'>{name}</h1>

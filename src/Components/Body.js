@@ -20,6 +20,7 @@ const fetchData = async () =>{
     try{
     const data = await fetch(DATA_URL)
      const jsonData = await data.json();
+     console.log(jsonData)
      setUserData(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
      setFilterData(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     }
@@ -51,6 +52,7 @@ const fetchData = async () =>{
 //    if(userData.length === 0){
 //     return (<Shimmer></Shimmer>)
 //    }
+console.log(userData)
     return (
         <div className="">
            <div className="flex my-2 justify-center">

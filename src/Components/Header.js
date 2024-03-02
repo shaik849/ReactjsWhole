@@ -18,6 +18,7 @@ function Header() {
             </div>
             <div className="flex items-center ">
                 <ul className="flex p-4">
+                <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'><Link to="/forms" relative="path">Form</Link></li>
                     <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'><Link to="/" relative="path">Home</Link></li>
                     <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'><Link to="/about" relative="path">About</Link></li>
                     <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'><Link to="/contact-us" relative="path">Contact Us</Link></li>
@@ -25,6 +26,7 @@ function Header() {
                     <li className="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabIndex="-1" id="user-menu-item-0"><button className='login-btn' onClick={() =>
                         {btnState === "Login"? useBtnState("Logout") : useBtnState("Login")}}>{btnState}</button></li>
                           <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'>{data.user}</li>
+                          {/* <li className='"block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0"'><Link to="/forms">Form</Link></li> */}
                 </ul>
             </div>
         </div>
